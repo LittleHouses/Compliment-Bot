@@ -12,7 +12,7 @@ api = setCred()
 #Aquire previous tweet list
 storage = tweetStorage()
 
-tweet_key = ['#selfie', 'headshot', 'selfie']
+tweet_key = [#list of search terms]
 tweet_count = 0
 no_limit = True
 
