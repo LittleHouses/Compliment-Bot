@@ -6,7 +6,7 @@ from TwitterBotUtil import getComp
 from TwitterBotUtil import tweetStorage
 from TwitterBotUtil import setCred
 
-#Initiate python wrapper for Twitter Application Programming Interface (API)
+#Initiate python wrapper for Twitter API
 api = setCred()
 
 #Aquire previous tweet list
