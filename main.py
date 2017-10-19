@@ -29,12 +29,10 @@ while(no_limit):
     #Search tweets acquired
     for status in search:
     #Check if retweet and if the bot has already responded to this tweet
-        if(status.text[0:2] != 'RT' and storage.checkTweet(status.id_str)):
+        if(status.text[0:2] != 'RT' and storage.checkTweet(status.id_str) and status.media != None):
             descriptions = []
-            #Check if tweet has media attached and that media is a photo
-            if (status.media != None):
+                #Check if media is a photo
                 if(status.media[0].type == 'photo'):
-                    print(status.text)
                     #Send pic to google vision and acquire labels
                     labels = returnLabels(status.media[0].media_url)
                     #Creat list of descriptions from labels
@@ -42,7 +40,6 @@ while(no_limit):
                         descriptions.append(label.description)
                     #Get compliment
                     compliment = getComp(descriptions)
-                    print(compliment)
                     #send compliment and update counter and previous tweet list
                     if (compliment != 'none'):
                         api.PostUpdate(status=compliment, auto_populate_reply_metadata=True, in_reply_to_status_id=status.id)
