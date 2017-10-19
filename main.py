@@ -9,7 +9,7 @@ from TwitterBotUtil import setCred
 #Initiate python wrapper for Twitter API
 api = setCred()
 
-#Aquire previous tweet list
+#Acquire previous tweet list
 storage = tweetStorage()
 
 tweet_key = [#list of search terms]
